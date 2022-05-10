@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://login/LoginSpace.tscn" type="PackedScene" id=2]
+[ext_resource path="res://NotesSpace/NotesSpace.tscn" type="PackedScene" id=3]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+use_threads = true
+
+[node name="LoginSpace" parent="." instance=ExtResource( 2 )]
+visible = false
+
+[node name="NotesSpace" parent="." instance=ExtResource( 3 )]
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+margin_right = 200.0
+margin_bottom = 58.0
+window_title = "Warning!"
+dialog_text = "this username already exists"
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]
+[connection signal="LoginSpace_ButtonPressed" from="LoginSpace" to="." method="_on_LoginSpace_LoginSpace_ButtonPressed"]
+[connection signal="add_note" from="NotesSpace" to="." method="_on_NotesSpace_add_note"]
+[connection signal="delete_note" from="NotesSpace" to="." method="_on_NotesSpace_delete_note"]
+[connection signal="logout" from="NotesSpace" to="." method="_on_NotesSpace_logout"]
+[connection signal="reload" from="NotesSpace" to="." method="_on_NotesSpace_reload"]
+[connection signal="update_note" from="NotesSpace" to="." method="_on_NotesSpace_update_note"]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]

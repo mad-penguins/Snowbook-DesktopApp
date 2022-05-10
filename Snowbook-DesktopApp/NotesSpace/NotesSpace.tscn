@@ -1,0 +1,234 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://NotesSpace/NotesSpace.gd" type="Script" id=1]
+[ext_resource path="res://NotesSpace/NoteContainer.tscn" type="PackedScene" id=2]
+
+[node name="NotesSpace" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LogoutButton" type="Button" parent="."]
+margin_left = 925.0
+margin_top = 10.0
+margin_right = 1012.0
+margin_bottom = 38.0
+text = "Log Out"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 36.0
+margin_top = 110.0
+margin_right = 223.0
+margin_bottom = 533.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 150.0
+margin_bottom = 194.0
+
+[node name="HBoxContainer" parent="ScrollContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_right = 150.0
+
+[node name="HBoxContainer3" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 66.0
+margin_right = 150.0
+margin_bottom = 128.0
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
+margin_right = 150.0
+margin_bottom = 14.0
+text = "Title"
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
+margin_top = 18.0
+margin_right = 150.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 150, 0 )
+text = "Read..."
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer3"]
+margin_top = 42.0
+margin_right = 150.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="HBoxContainer2" type="VBoxContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 132.0
+margin_right = 150.0
+margin_bottom = 194.0
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
+margin_right = 150.0
+margin_bottom = 14.0
+text = "Title"
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
+margin_top = 18.0
+margin_right = 150.0
+margin_bottom = 38.0
+rect_min_size = Vector2( 150, 0 )
+text = "Read..."
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer/HBoxContainer2"]
+margin_top = 42.0
+margin_right = 150.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 0, 20 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 36.0
+margin_top = 59.0
+margin_right = 101.0
+margin_bottom = 73.0
+text = "My Notes:"
+uppercase = true
+
+[node name="Title" type="VBoxContainer" parent="."]
+margin_left = 437.0
+margin_top = 59.0
+margin_right = 719.0
+margin_bottom = 101.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Title"]
+margin_right = 282.0
+margin_bottom = 14.0
+text = "Title:"
+
+[node name="LineEdit" type="LineEdit" parent="Title"]
+margin_top = 18.0
+margin_right = 282.0
+margin_bottom = 42.0
+
+[node name="Text" type="VBoxContainer" parent="."]
+margin_left = 437.0
+margin_top = 152.0
+margin_right = 937.0
+margin_bottom = 470.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Text"]
+margin_right = 500.0
+margin_bottom = 14.0
+text = "Text:"
+
+[node name="TextEdit" type="TextEdit" parent="Text"]
+margin_top = 18.0
+margin_right = 500.0
+margin_bottom = 318.0
+rect_min_size = Vector2( 500, 300 )
+show_line_numbers = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 437.0
+margin_top = 521.0
+margin_right = 477.0
+margin_bottom = 561.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button_Add" type="Button" parent="HBoxContainer"]
+margin_right = 104.0
+margin_bottom = 40.0
+text = "Add New Note"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+margin_left = 108.0
+margin_right = 148.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 0 )
+
+[node name="Button_Update" type="Button" parent="HBoxContainer"]
+margin_left = 152.0
+margin_right = 245.0
+margin_bottom = 40.0
+text = "Update Note"
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
+margin_left = 249.0
+margin_right = 389.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 140, 0 )
+
+[node name="Button_Delete" type="Button" parent="HBoxContainer"]
+margin_left = 393.0
+margin_right = 483.0
+margin_bottom = 40.0
+text = "Delete Note"
+
+[node name="Button_Reload" type="Button" parent="."]
+margin_left = 186.0
+margin_top = 59.0
+margin_right = 241.0
+margin_bottom = 79.0
+text = "Reload"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button_Clear" type="Button" parent="."]
+margin_left = 297.0
+margin_top = 304.0
+margin_right = 382.0
+margin_bottom = 324.0
+text = "Clear Editor"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="need" type="Label" parent="."]
+visible = false
+margin_left = 164.0
+margin_top = 88.0
+margin_right = 275.0
+margin_bottom = 102.0
+text = "Need to update!!!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="need2" type="Label" parent="need"]
+margin_left = 4.0
+margin_top = -55.0
+margin_right = 115.0
+margin_bottom = -41.0
+text = "Need to update!!!"
+
+[node name="need3" type="Label" parent="need"]
+margin_left = 133.0
+margin_top = -73.0
+margin_right = 244.0
+margin_bottom = -59.0
+rect_rotation = 56.7
+text = "Need to update!!!"
+
+[node name="need4" type="Label" parent="need"]
+margin_left = -59.0
+margin_top = 7.0
+margin_right = 52.0
+margin_bottom = 21.0
+rect_rotation = -51.5
+text = "Need to update!!!"
+
+[connection signal="pressed" from="LogoutButton" to="." method="_on_LogoutButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button_Add" to="." method="_on_Button_Add_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button_Update" to="." method="_on_Button_Update_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button_Delete" to="." method="_on_Button_Delete_pressed"]
+[connection signal="pressed" from="Button_Reload" to="." method="_on_Button_Reload_pressed"]
+[connection signal="pressed" from="Button_Clear" to="." method="_on_Button_Clear_pressed"]
